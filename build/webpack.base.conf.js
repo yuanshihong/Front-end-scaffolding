@@ -8,10 +8,6 @@ const assetsPath = dir => path.posix.join(baseConf.assetsPath, dir)
 
 //webpack 基本设置
 module.exports = {
-  //项目入口文件->webpack从此处开始构建！
-  entry: {
-    app: './src/main.js'
-  },
 
   //配置模块如何被解析
   resolve: {

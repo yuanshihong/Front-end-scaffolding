@@ -34,13 +34,13 @@ export default class Home extends React.Component {
         <div onClick={this.handleAsyncClick}>
            get async Data
          </div>
-         {
+          {
            this.props.list.length
             ? this.props.list.map((item) => {
               return <div key={item.id}>{item.source}</div>
             })
             : null
-        }
+          }
       </div>
     )
   }

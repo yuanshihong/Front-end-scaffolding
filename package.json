@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack-dev-server --config build/webpack.dev.conf.js",
+    "dev": "node build/server.js",
     "start": "yarn run dev",
     "build": "node build/build.js",
     "analyz": "cross-env analyz_config_report=true yarn run build"
@@ -60,6 +60,7 @@
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-fastclick": "^3.0.2",
+    "react-hot-loader": "^4.1.0",
     "react-id-swiper": "^1.6.2",
     "react-redux": "^5.0.7",
     "react-router-dom": "^4.2.2",

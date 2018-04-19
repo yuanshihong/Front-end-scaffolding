@@ -37,3 +37,14 @@ ReactDom.render(
     </div>
   </Provider>
   , document.getElementById('app'))
+if (module.hot) {
+  module.hot.accept(Router, () => {
+    ReactDom.render(
+      <Provider store={store}>
+        <div>
+          <Router/>
+        </div>
+      </Provider>
+      , document.getElementById('app'))
+  })
+}

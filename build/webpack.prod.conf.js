@@ -21,6 +21,10 @@ const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 const assetsPath = dir => path.posix.join(prodConf.assetsPath, dir)
 
 const prod = merge({}, baseConf, {
+  //项目入口文件->webpack从此处开始构建！
+  entry: {
+    app: './src/main.js'
+  },
   output: {
     //Build后所有文件存放的位置
     path: path.resolve(__dirname, '../dist'),

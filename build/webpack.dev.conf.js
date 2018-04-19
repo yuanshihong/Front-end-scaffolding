@@ -16,6 +16,15 @@ const notifier = require('node-notifier')
 
 
 const dev = merge(baseConfig, {
+  //项目入口文件->webpack从此处开始构建！
+  entry: {
+    app: [
+      'react-hot-loader/patch',
+      'webpack-dev-server/client?http://localhost:9999',
+      'webpack/hot/only-dev-server',
+      './src/main.js'
+    ]
+  },
   output: {
     //文件名
     filename: '[name]-[hash].js',
@@ -30,8 +39,9 @@ const dev = merge(baseConfig, {
   //生成sourceMaps(方便调试)
   devtool: devConf.devtool,
 
-  //启动一个express服务器,使我们可以在本地进行开发！！！
+  // 启动一个express服务器,使我们可以在本地进行开发！！！
   devServer: {
+    contentBase: path.normalize(path.resolve(__dirname + '/../dist')),
     hot: true, // 热加载
     inline: true, //自动刷新
     open: true, //自动打开浏览器
